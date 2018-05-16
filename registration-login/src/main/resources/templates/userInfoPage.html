@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>User Info</title>
+    <th:block th:include="/_header"/>
+    <style>
+
+    </style>
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+<th:block th:include="/navbar"/>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">User info page</li>
+        </ol>
+
+        <div class="card">
+            <div class="card-header">Welcome : <span th:utext="${userName}"></span></div>
+            <div class="card-body">
+                <b>This is protected page!</b>
+                <div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Access Denied</title>
+    <th:block th:include="/_header"/>
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+<th:block th:include="/navbar"/>
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="alert alert-danger" th:if="${message != null}" th:utext="${message}" ></div>
+        <div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+    </div>
+</div>
+</body>
+
+</html>

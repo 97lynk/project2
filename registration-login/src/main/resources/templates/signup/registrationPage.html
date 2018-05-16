@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html th:xmlns="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up for shop</title>
+    <th:block th:include="/_header"/>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+
+            <div class="card-header">
+                <h2 th:text="#{label.signup.title}">form</h2>
+            </div>
+            <div class="card-body">
+                <form action="/u/registration" th:object="${user}" method="POST" enctype="utf8">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label th:text="#{label.user.firstName}">first</label>
+                                <input class="form-control" th:field="*{firstName}"/>
+                                <!--<br th:unless="${#fields.hasErrors('firstName')}"/>-->
+                                <span class="text-danger" th:each="error: ${#fields.errors('firstName')}"
+                                      th:text="${error} + '. '">Validation error</span>
+                            </div>
+                            <div class="col-md-6">
+
+                                <label th:text="#{label.user.lastName}">last</label>
+                                <input class="form-control" th:field="*{lastName}"/>
+                                <!--<br th:unless="${#fields.hasErrors('lastName')}"/>-->
+                                <span class="text-danger" th:each="error : ${#fields.errors('lastName')}"
+                                      th:text="${error} + '. '">Validation error</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label th:text="#{label.user.email}">email</label>
+                        <input class="form-control" type="email" th:field="*{email}"/>
+                        <!--<br th:unless="${#fields.hasErrors('email')}"/>-->
+                        <span class="text-danger" th:each="error : ${#fields.errors('email')}"
+                              th:text="${error} + '. '">Validation error</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label th:text="#{label.user.password}">password</label>
+                                <input class="form-control" type="password" th:field="*{password}"/>
+                                <!--<br th:unless="${#fields.hasErrors('password')}"/>-->
+
+                            </div>
+                            <div class="col-md-6">
+                                <label th:text="#{label.user.confirmPass}">confirm</label>
+                                <input class="form-control" type="password" th:field="*{matchingPassword}"/>
+                                <br th:unless="${#fields.hasGlobalErrors()}"/>
+                                <span class="text-danger" th:each="error : ${#fields.globalErrors()}"
+                                      th:text="${error} + '. '">Validation error</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <span class="text-danger" th:each="error : ${#fields.errors('password')}"
+                                          th:text="${error} + '. '">Validation error</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="btn btn-primary btn-block" type="submit" th:value="#{label.signup.submit}"/>
+                </form>
+
+            </div>
+            <div class="card-footer text-center">
+                <span th:text="#{label.alreadyAccount}"></span>
+                <a th:href="@{/u/login}" th:text="#{label.signin.submit}"></a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

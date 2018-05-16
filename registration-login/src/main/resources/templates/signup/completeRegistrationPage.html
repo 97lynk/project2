@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Signup</title>
+    <th:block th:include="/_header"/>
+</head>
+<body>
+<th:block th:include="/navbar"></th:block>
+<div class="w3-container w3-border w3-round-xlarge w3-display-middle w3-col m12 l6">
+    <b class="w3-xxlarge" th:text="#{message.lastStep}"></b>
+    <hr style="margin: 0"/>
+    <div th:object="${user}" class="w3-container w3-animate-bottom w3-xlarge" >
+        Hello! <b th:text="*{firstName} + ' ' + *{lastName} + ' '">name</b><br />
+        <span th:text="${message}">message</span>
+    </div>
+</div>
+</body>
+</html>

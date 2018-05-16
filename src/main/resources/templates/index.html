@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link thref="/css/css" rel="stylesheet" type="text/css"/>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="/css/nifty.min.css" rel="stylesheet"/>
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="/css/nifty-demo-icons.min.css" rel="stylesheet"/>
+
+
+    <!--=================================================-->
+
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="/css/pace.min.css" rel="stylesheet"/>
+    <script src="/js/pace.min.js"></script>
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="/css/nifty-demo.min.css" rel="stylesheet"/>
+
+
+    <title>Title</title>
+
+</head>
+<body>
+
+<!--<div class="boxed">-->
+<!--<div id="content-container">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-4">.col-sm-4</div>-->
+<!--<div class="col-sm-8">-->
+<!--<ul class="list-group" th:unless="${blobs == null}">-->
+<!--<li class="list-group-item" th:each="b : ${blobs}">-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<i th:unless="${b.isDirectory()}" style="font-size: 24px;" class="fa">&#xf016;</i>&ndash;&gt;-->
+<!--&lt;!&ndash;<i th:if="${b.isDirectory()}" style="font-size: 24px;  color: #FFC107;" class="fa">&#xf07b;</i>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a th:href="@{'file?b=' + ${b.name}}" th:text="${b.name}"></a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<a th:href="@{'file?b=' + ${b.name}}" th:if="${#strings.equals(b.name, currentDirectory)}"&ndash;&gt;-->
+<!--&lt;!&ndash;th:text="${currentDirectory}"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;<a th:href="@{'file?b=' + ${b.name}}" th:unless="${#strings.equals(b.name, currentDirectory)}"&ndash;&gt;-->
+<!--&lt;!&ndash;th:text="${#strings.substringAfter(b.name, currentDirectory)}"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>   &ndash;&gt;-->
+<!--<div th:if="${#strings.equals(b.name, currentDirectory)}">-->
+<!--<i style="font-size: 24px;  color: #FFC107;" class="fa">&#xf07b;</i>-->
+<!--&lt;!&ndash;<a th:href="@{'file?b=' + ${b.name}}" th:text="${b.name}"></a>&ndash;&gt;-->
+<!--<a th:href="@{'file?b=' + ${currentDirectory}}"-->
+<!--th:text="${currentDirectory}"></a>-->
+<!--</div>-->
+<!--<div th:unless="${#strings.equals(b.name, currentDirectory)}">-->
+<!--<i th:if="${b.isDirectory()}" style="font-size: 24px;  color: #FFC107;"-->
+<!--class="fa">&#xf07b;</i>-->
+<!--<i th:unless="${b.isDirectory()}" style="font-size: 24px;" class="fa">&#xf016;</i>-->
+<!--<a th:href="@{'file?b=' + ${b.name}}"-->
+<!--th:text="${#strings.substringAfter(b.name, currentDirectory)}"></a>-->
+<!--</div>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--Page content-->
+<!--===================================================-->
+<div id="page-content">
+
+    <div class="panel">
+        <div class="pad-all file-manager">
+            <div class="fixed-fluid">
+                <div class="fixed-sm-200 pull-sm-left file-sidebar">
+                    <div class="bord-btm pad-btm">
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"
+                           class="btn btn-block btn-lg btn-info v-middle">Upload Files</a>
+                    </div>
+
+                    <p class="pad-hor mar-top text-main text-bold text-sm text-uppercase">Bookmark</p>
+                    <div class="list-group bg-trans pad-ver bord-btm">
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item"><i
+                                class="demo-pli-folder-with-document icon-lg icon-fw"></i> User Folders</a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item"><i
+                                class="demo-pli-camera-2 icon-lg icon-fw"></i> Photos</a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item"><i
+                                class="demo-pli-video icon-lg icon-fw"></i> Videos</a>
+                    </div>
+
+
+                    <p class="pad-hor mar-top text-main text-bold text-sm text-uppercase">Folders</p>
+                    <div class="list-group bg-trans pad-btm bord-btm">
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> ...
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"
+                           class="list-group-item text-bold">
+                            <span class="text-main"><i class="demo-pli-folder-with-document icon-lg icon-fw"></i> Documents</span>
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Favorites
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Data
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> PDF Docs
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Illustration
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Github
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Server
+                        </a>
+                        <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="list-group-item">
+                            <i class="demo-pli-folder icon-lg icon-fw"></i> Old Files
+                        </a>
+                    </div>
+
+
+                    <p class="pad-hor mar-top text-main text-bold text-sm text-uppercase">Tags</p>
+                    <ul class="list-inline mar-hor">
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Family</a>
+                        </li>
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Home</a>
+                        </li>
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Work</a>
+                        </li>
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Film</a>
+                        </li>
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Music</a>
+                        </li>
+                        <li class="tag tag-sm">
+                            <a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#">Videos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fluid file-panel">
+                    <div class="bord-btm pad-ver">
+                        <ol class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="active" th:each="brc : ${listBreadcrumb}">
+                                <a th:href="@{'file?b=' + ${brc.key}}" th:text="${brc.value}"></a></li>
+                        </ol>
+                    </div>
+
+                    <ul id="demo-mail-list" class="file-list" th:unless="${blobs == null}">
+
+                        <!--File list item-->
+                        <li th:each="b : ${blobs}" th:unless="${#strings.equals(b.name, currentDirectory)}">
+                            <div class="file-details">
+                                <div class="media-block">
+                                    <div class="media-left">
+                                        <i th:if="${b.isDirectory()}" style="font-size: 24px;  color: #FFC107;"
+                                           class="fa">&#xf07b;</i>
+                                        <i th:unless="${b.isDirectory()}" style="font-size: 24px;"
+                                           class="fa">&#xf016;</i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a th:href="@{'file?b=' + ${b.name}}">
+                                            <p class="file-name single-line" th:if="${b.isDirectory()}"
+                                               th:text="${#strings.substringAfter(b.name, currentDirectory)}">folder
+                                                name</p>
+                                            <p class="file-name" th:unless="${b.isDirectory()}"
+                                               th:text="${#strings.substringAfter(b.name, currentDirectory)}">file
+                                                name</p>
+                                        </a>
+                                        <small th:unless="${b.isDirectory()}">
+                                            <span th:text="${#dates.format(b.createTime, 'dd-MM-yyyy HH:mm')}">update time</span> |
+                                            <span th:text="${b.size / 1000.0}">aize</span> KB |
+                                            <a th:href="@{'share?b='+ ${b.name}}">get link share</a>
+                                        </small>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--File list item-->
+                        <!--<li>-->
+                        <!--<div class="file-control">-->
+                        <!--<input id="file-list-5" class="magic-checkbox" type="checkbox">-->
+                        <!--<label for="file-list-5"></label>-->
+                        <!--</div>-->
+                        <!--<div class="file-settings"><a-->
+                        <!--href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"><i-->
+                        <!--class="pci-ver-dots"></i></a></div>-->
+                        <!--<div class="file-attach-icon"></div>-->
+                        <!--<a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="file-details">-->
+                        <!--<div class="media-block">-->
+                        <!--<div class="media-left"><i class="demo-pli-file-txt"></i></div>-->
+                        <!--<div class="media-body">-->
+                        <!--<p class="file-name">robots.txt</p>-->
+                        <!--<small>Created 3 weeks ago | 17 KB</small>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+
+
+                        <!--&lt;!&ndash;File list item&ndash;&gt;-->
+                        <!--<li>-->
+                        <!--<div class="file-control">-->
+                        <!--<input id="file-list-6" class="magic-checkbox" type="checkbox">-->
+                        <!--<label for="file-list-6"></label>-->
+                        <!--</div>-->
+                        <!--<div class="file-settings"><a-->
+                        <!--href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"><i-->
+                        <!--class="pci-ver-dots"></i></a></div>-->
+                        <!--<div class="file-attach-icon"></div>-->
+                        <!--<a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="file-details">-->
+                        <!--<div class="media-block">-->
+                        <!--<div class="media-left"><i class="demo-pli-video"></i></div>-->
+                        <!--<div class="media-body">-->
+                        <!--<p class="file-name">Highland.mp4</p>-->
+                        <!--<small>Created 3 weeks ago | 540 MB</small>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+
+
+                        <!--&lt;!&ndash;File list item&ndash;&gt;-->
+                        <!--<li>-->
+                        <!--<div class="file-control">-->
+                        <!--<input id="file-list-7" class="magic-checkbox" type="checkbox">-->
+                        <!--<label for="file-list-7"></label>-->
+                        <!--</div>-->
+                        <!--<div class="file-settings"><a-->
+                        <!--href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"><i-->
+                        <!--class="pci-ver-dots"></i></a></div>-->
+                        <!--<div class="file-attach-icon"></div>-->
+                        <!--<a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="file-details">-->
+                        <!--<div class="media-block">-->
+                        <!--<div class="media-left"><i class="demo-pli-file"></i></div>-->
+                        <!--<div class="media-body">-->
+                        <!--<p class="file-name">License</p>-->
+                        <!--<small>Created 3 weeks ago | 2 KB</small>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+
+
+                        <!--&lt;!&ndash;File list item&ndash;&gt;-->
+                        <!--<li>-->
+                        <!--<div class="file-control">-->
+                        <!--<input id="file-list-8" class="magic-checkbox" type="checkbox">-->
+                        <!--<label for="file-list-8"></label>-->
+                        <!--</div>-->
+                        <!--<div class="file-settings"><a-->
+                        <!--href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"><i-->
+                        <!--class="pci-ver-dots"></i></a></div>-->
+                        <!--<div class="file-attach-icon"></div>-->
+                        <!--<a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="file-details">-->
+                        <!--<div class="media-block">-->
+                        <!--<div class="media-left"><i class="demo-pli-file-word"></i></div>-->
+                        <!--<div class="media-body">-->
+                        <!--<p class="file-name">Company Overview.doc</p>-->
+                        <!--<small>Created 3 weeks ago | 2 KB</small>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+
+
+                        <!--&lt;!&ndash;File list item&ndash;&gt;-->
+                        <!--<li>-->
+                        <!--<div class="file-control">-->
+                        <!--<input id="file-list-9" class="magic-checkbox" type="checkbox">-->
+                        <!--<label for="file-list-9"></label>-->
+                        <!--</div>-->
+                        <!--<div class="file-settings"><a-->
+                        <!--href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#"><i-->
+                        <!--class="pci-ver-dots"></i></a></div>-->
+                        <!--<div class="file-attach-icon"></div>-->
+                        <!--<a href="http://www.themeon.net/nifty/v2.9/app-file-manager.html#" class="file-details">-->
+                        <!--<div class="media-block">-->
+                        <!--<div class="media-left"><i class="demo-pli-file-jpg"></i></div>-->
+                        <!--<div class="media-body">-->
+                        <!--<p class="file-name">Nature.jpg</p>-->
+                        <!--<small>Created 3 weeks ago | 56 KB</small>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--===================================================-->
+<!--End page content-->
+</body>
+</html>

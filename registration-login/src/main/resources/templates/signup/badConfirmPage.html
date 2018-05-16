@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <th:block th:include="/_header"/>
+</head>
+
+<body>
+    <h1 th:text="${message}">Error Message</h1>
+    <p th:unless="${mailAddress == null}">Resend confirm: 
+        <a  class="text-my-color w3-hover-text-blue" th:href="@{'/u/resendRegistration?email='+ ${mailAddress}}">resend mail</a>
+    </p>
+    <p>
+        <a class="text-my-color w3-hover-text-blue" th:href="@{/u/registration}"
+           th:text="#{label.signup.submit}">signup</a>|
+        <a class="text-my-color w3-hover-text-blue" th:href="@{/u/login}"
+           th:text="#{label.signin.submit}">signin</a>
+    </p>
+</body>
+</html>

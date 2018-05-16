@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Login</title>
+    <th:block th:include="_header"/>
+</head>
+
+<body class="bg-dark">
+
+    <div class="card card-login mx-auto mt-5">  
+
+
+        <div class="card-header">
+            <h2 th:text="#{label.signin.title}">Login</h2>
+        </div>
+        <div class="card-body">
+            <form name="f" th:action="@{/j_spring_security_check}" method="POST">
+                <div class="form-group">
+                    <label th:text="#{label.user.email}">Email</label>
+                    <input class="form-control" type="text" name="username" value=""/>
+                </div>
+
+                <div class="form-group">
+                    <label th:text="#{label.user.password}">Password</label> 
+                    (<a th:href="@{/u/resetPassword}" th:text="#{label.forgotPass}">Forgot Password?</a>)
+                    <input class="form-control" type="password" name="password" />
+                </div>
+                <div class="form-group">
+                    <label th:text="#{label.rememberMe}">Remember Me:</label>
+                    <input type="checkbox" name="remember-me" />
+                </div>
+                <!--<br th:if="${param.error == null and session[SPRING_SECURITY_LAST_EXCEPTION] == null}"/>-->
+                <div class="alert alert-danger" th:unless="${param.error == null || session[SPRING_SECURITY_LAST_EXCEPTION] == null}"
+                     th:text="${session[SPRING_SECURITY_LAST_EXCEPTION]}">
+                    Static summary
+                </div>
+                <input class="btn btn-primary btn-block" name="submit" type="submit" th:value="#{label.signin.submit}" />
+            </form>
+        </div>
+        <div class="card-footer">
+            <span th:text="#{label.dontAccount}"></span> 
+            <a class="text-my-color w3-hover-text-blue" th:href="@{/u/registration}" th:text="#{label.signup.submit}">Signup now</a>
+            <br/>
+            <span th:text="#{label.didnotConfirm}"></span> 
+            <a class="text-my-color w3-hover-text-blue" th:href="@{/u/resendRegistration}" th:text="#{label.resend}">Resend</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Resend confirm</title>
+    <th:block th:include="/_header"/>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="card card-login mx-auto mt-5">
+
+                <div class="card-header">
+                    <h2 th:text="#{label.resendConfirm}">Resend</h2>
+                </div>
+                <div class="card-body">
+                    <form  th:action="@{/u/resendRegistration}" method="POST">
+                        <div class="form-group">
+                            <label th:text="#{label.user.email}">Email</label>
+                            <input class="form-control" size="30" type="email"
+                                   name="email" th:value="${email}"/>
+                        </div>
+                        <!--<br th:if="${result} == null"/>-->
+                        <div th:class="${textColor}" th:unless="${result} == null" th:text="${result}"></div>
+                        <div>
+                            <input class="btn btn-primary btn-block" name="submit" type="submit" th:value="#{label.resend}" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
