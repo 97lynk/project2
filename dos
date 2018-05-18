@@ -1,3 +1,4 @@
+  <!ENTITY foo ANY>
   <!ENTITY bar "World ">
   <!ENTITY t1 "&bar;&bar;">
   <!ENTITY t2 "&t1;&t1;&t1;&t1;">
