@@ -31,7 +31,7 @@ public class LoginController {
 
     // gửi form login
     @RequestMapping(value = "/u/login", method = RequestMethod.GET)
-    public String loginPage(Authentication auth) {
+    public String loginPage() {
 //        User loginedUser = (User) ((Authentication) principal).getPrincipal();
 //
 //        String userInfo = loginedUser.toString();
@@ -51,7 +51,7 @@ public class LoginController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         logger.info("logout success");
-        return "signin/logoutSuccessfulPage";
+        return "redirect:/";
     }
 
 //    @RequestMapping(value = "/u/logout2", method = RequestMethod.GET)

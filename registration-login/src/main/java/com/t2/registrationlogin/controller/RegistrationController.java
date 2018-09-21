@@ -6,8 +6,9 @@
 package com.t2.registrationlogin.controller;
 
 
-import com.t2.registrationlogin.dto.*;
-import com.t2.registrationlogin.entity.*;
+import com.t2.registrationlogin.dto.UserDTO;
+import com.t2.registrationlogin.entity.User;
+import com.t2.registrationlogin.entity.VerificationToken;
 import com.t2.registrationlogin.event.SendConfirmMailEvent;
 import com.t2.registrationlogin.service.IUserService;
 import com.t2.sendmail.exception.EmailExistsException;
@@ -32,21 +33,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author 97lynk
  */
 @Controller
 public class RegistrationController {
-    
+
     private static final Logger logger
             = Logger.getLogger(RegistrationController.class.getName());
-    
+
     @Autowired
     private ApplicationEventPublisher eventPublisher;
-    
+
     @Autowired
     private MessageSource messages;
-    
+
     @Autowired
     private IUserService userService;
 
@@ -96,7 +96,7 @@ public class RegistrationController {
     // confirm link được gửi qua mail kèm token
     @RequestMapping(value = "/u/registrationConfirm", method = RequestMethod.GET)
     public String confirmRegistration(Locale locale, Model model,
-            @RequestParam(name = "token", defaultValue = "") String token) {
+                                      @RequestParam(name = "token", defaultValue = "") String token) {
 
         // tìm token trong db
         Optional<VerificationToken> verificationToken
@@ -116,7 +116,7 @@ public class RegistrationController {
             model.addAttribute("message", message);
             return "signup/badConfirmPage";
         }
-        
+
         Calendar cal = Calendar.getInstance();
         // kiểm tra thời hạn token
         if (verificationToken.map(VerificationToken::getExpiryDate).get()
@@ -126,14 +126,14 @@ public class RegistrationController {
             model.addAttribute("mailAddress", user.map(User::getEmail).get());
             return "signup/badConfirmPage";
         }
-        
+
         User u = user.orElse(new User());
         u.setEnabled(true);
         userService.saveRegisteredUser(u);
         model.addAttribute("user", u);
         return "signin/loginPage";
     }
-    
+
     private User createUserAccount(UserDTO userDTO, BindingResult result) {
         User registered = null;
         try {
@@ -150,5 +150,5 @@ public class RegistrationController {
         }
         return registered;
     }
-    
+
 }

@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // bỏ qua csrf cho form đăng kí
-        http.csrf().ignoringAntMatchers("/u/registration");
+        http.csrf().ignoringAntMatchers("/u/registration", "/up");
 
         // Các trang không yêu cầu login
         http.authorizeRequests().antMatchers("/u/login", "/u/logout").permitAll();
@@ -89,7 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/j_spring_security_check") // Submit URL
                 .loginPage("/u/login")
                 //
-                .defaultSuccessUrl("/u/info")
+                .defaultSuccessUrl("/owner")
                 //
                 .failureHandler(authFailureHandler)
                 //

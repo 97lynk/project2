@@ -67,7 +67,7 @@ public class UserService implements IUserService {
         user.setLastName(userDTO.getLastName());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         user.setEmail(userDTO.getEmail());
-        user.setRoles(Arrays.asList(roleRepository.findByName("STAFF")));
+        user.setRoles(Arrays.asList(roleRepository.findByName("USER")));
         logger.info(user.toString());
         return userRepository.save(user);
     }

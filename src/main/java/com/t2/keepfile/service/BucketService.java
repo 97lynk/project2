@@ -3,8 +3,11 @@ package com.t2.keepfile.service;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 @Service
 public class BucketService {
@@ -47,11 +50,20 @@ public class BucketService {
         //return blobIterable;
     }
 
+    public Blob createFolder(String folderName) {
+        return bucket.getStorage().create(
+                BlobInfo.newBuilder(BUCKET_NAME, String.format("%s/", folderName)).build(),
+                Storage.BlobTargetOption.userProject(PROJECT_ID));
+    }
+
 
     public Blob getBlobByBucketAndObject(String objectName) {
-        System.out.println("download name = " + objectName);
         BlobId blobId = BlobId.of(BUCKET_NAME, objectName);
         return bucket.getStorage().get(blobId);
+    }
+
+    public boolean existObject(String objectName) {
+        return (getBlobByBucketAndObject(objectName) != null);
     }
 
     public String getLinkShare(String objectName) {
@@ -66,5 +78,10 @@ public class BucketService {
 //            }
 //        });
 //    }
+
+    public Blob uploadFile(MultipartFile uploadedFile, String dir) throws IOException {
+        InputStream content = new ByteArrayInputStream(uploadedFile.getBytes());
+        return bucket.create(String.format("%s%s", dir, uploadedFile.getOriginalFilename()), content, uploadedFile.getContentType());
+    }
 
 }
