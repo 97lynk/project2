@@ -1,0 +1,101 @@
+p { line-height:26px;}
+body,html{
+	font-family:'Lato', sans-serif;
+	position:relative;
+	font-size:14px;
+}
+
+.affix{
+	width:100%;
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:9999;
+}
+
+.navbar-default{
+	background:#000;
+	border:0px;
+	border-radius:0px;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+  color:white;
+  font-weight:900;
+}
+
+.navbar-default .navbar-header .navbar-brand span{
+  color:#ffcb05;
+}
+
+.navbar-default .navbar-header .navbar-toggle {
+	background:none;
+	border:0;
+	margin-right:10px;
+}
+
+.navbar-default .navbar-header .navbar-toggle span{
+	background:white;
+}
+  
+.navbar-default .nav > li > a{
+	color:white;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus,
+.navbar-default .nav > li > a:focus:hover {
+	color: #ffcb05;
+}
+
+.navbar-default .nav > li.active > a,
+.navbar-default .nav > li.active > a:focus {
+ 	color: #ffcb05;
+	background-color: transparent;
+}
+
+.navbar-default .nav > li.active > a:hover,
+.navbar-default .nav > li.active > a:focus:hover {
+	background-color: transparent;
+	color:#ffcb05;
+}
+
+#section-0 { margin-top:25px;}
+section{
+	
+	padding:30px 0px;
+}
+	
+#footer{
+	text-align:center;
+	background:#000000;
+	color:white;
+	padding:30px 0px;
+}
+
+#footer li .fa{
+	font-size:30px;
+}
+
+#footer li a{
+	color:white;
+}
+
+#footer p{
+	margin-bottom:0px;
+}
+
+#footer p a{
+	color:#ffcb05;
+}
+
+.toolbar   { 
+	display:none;
+}
+@media(max-width:500px){
+	
+	section h1{
+		font-size:26px;
+	}
+}
+		

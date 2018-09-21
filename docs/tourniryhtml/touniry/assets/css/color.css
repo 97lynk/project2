@@ -1,0 +1,50 @@
+/* ---------------------------------------------------
+Change Color
+1 => #ba24f1 => primary
+2 => #9f04d8 => primary hover color
+Search & replace only these two color
+-----------------------------------------------------*/
+
+/* ---------------------------------------------------
+Main Color
+-----------------------------------------------------*/
+.main-bg, .main-bg-hover:hover, .main-bg, .link-animation a:after, .main-bg-btn {
+    background-color: #ba24f1;
+}
+@media (max-width: 991px) {
+    .logo-menu-section {
+        background: #ba24f1;
+    }
+    .link-animation a:after {
+        background-color: #fff;
+    }
+}
+
+@media (min-width: 992px) {
+    .logo-menu-section .menu-wrapper .menu li.current-menu-item > a, .logo-menu-section .menu-wrapper .menu li a:hover {
+        color: #ba24f1;
+    }
+}
+
+a, .main-text-color, .filter-item li > a.selected, .filter-item li:hover > a  {
+    color: #ba24f1;
+}
+
+.main-border-color, .contact-section .contact-form-wrapper .form-control:focus, .half-img-content-box {
+    border-color: #ba24f1;
+}
+
+.price:after {
+    border: 20px solid #ba24f1;
+    border-left-color: transparent;
+}
+
+/* ---------------------------------------------------
+Hover Color
+-----------------------------------------------------*/
+a:hover {
+    color: #9f04d8;
+}
+.main-bg-btn:hover {
+    background-color: #9f04d8;
+}

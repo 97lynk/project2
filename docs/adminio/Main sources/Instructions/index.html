@@ -1,0 +1,844 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Admin.io - Angular js material admin theme</title>
+	
+	<meta name="description" content="Ioadmin is a full fledged Material design angular admin template. Built using Google's framework for AngularJS.">
+	<meta name="author" content="Joao Garin">
+	<meta name="copyright" content="Joao Garin">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-12-01T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-adminio">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation" title="Installation">Installation</a>
+				<ul>
+					<li><a href="#installation_installing">Installing</a>
+					<li><a href="#installation_compiling_the_theme">Compiling the theme</a>
+					<li><a href="#installation_packagejson_development_dependencies">package.json - Development dependencies</a>
+					<li><a href="#installation_bowerjson_external_dependencies">Bower.json - External dependencies</a>
+				</ul>
+			</li>
+			<li><a href="#application_structure" title="Application Structure">Application Structure</a></li>
+			<li><a href="#material_angular_js_directives" title="Material Angular JS Directives">Material Angular JS Directives</a>
+				<ul>
+					<li><a href="#material_angular_js_directives_md_autocomplete">md-autocomplete</a>
+					<li><a href="#material_angular_js_directives_md_button">md-button</a>
+					<li><a href="#material_angular_js_directives_md_card">md-card</a>
+					<li><a href="#material_angular_js_directives_md_checkbox">md-checkbox</a>
+					<li><a href="#material_angular_js_directives_md_content">md-content</a>
+					<li><a href="#material_angular_js_directives_md_icon">md-icon</a>
+					<li><a href="#material_angular_js_directives_md_input">md-input</a>
+					<li><a href="#material_angular_js_directives_md_progress_circular">md-progress-circular</a>
+					<li><a href="#material_angular_js_directives_md_progress_linear">md-progress-linear</a>
+					<li><a href="#material_angular_js_directives_md_radio_button">md-radio-button</a>
+					<li><a href="#material_angular_js_directives_md_select">md-select</a>
+					<li><a href="#material_angular_js_directives_md_sidenav">md-sidenav</a>
+					<li><a href="#material_angular_js_directives_md_slider">md-slider</a>
+					<li><a href="#material_angular_js_directives_md_switch">md-switch</a>
+					<li><a href="#material_angular_js_directives_md_tab">md-tab</a>
+					<li><a href="#material_angular_js_directives_md_toolbar">md-toolbar</a>
+					<li><a href="#material_angular_js_directives_md_tooltip">md-tooltip</a>
+				</ul>
+			</li>
+			<li><a href="#charts" title="Charts">Charts</a>
+				<ul>
+					<li><a href="#charts_morris_charts">Morris charts</a>
+					<li><a href="#charts_chart_js">Chart js</a>
+					<li><a href="#charts_flot_charts">Flot charts</a>
+					<li><a href="#charts_easypiecharts">Easypiecharts</a>
+					<li><a href="#charts_gauge_charts">Gauge charts</a>
+					<li><a href="#charts_sparkline">Sparkline</a>
+				</ul>
+			</li>
+			<li><a href="#css_files" title="CSS Files">CSS Files</a></li>
+			<li><a href="#icons" title="Icons">Icons</a>
+				<ul>
+					<li><a href="#icons_glyphicons">Glyphicons</a>
+					<li><a href="#icons_weather_icons">Weather icons</a>
+					<li><a href="#icons_font_awesome">Font awesome</a>
+				</ul>
+			</li>
+			<li><a href="#additional_angular_scripts" title="Additional Angular scripts">Additional Angular scripts</a>
+				<ul>
+					<li><a href="#additional_angular_scripts_angular_bootstrap_ui">Angular Bootstrap UI</a>
+					<li><a href="#additional_angular_scripts_app_todo">App todo</a>
+					<li><a href="#additional_angular_scripts_nested_lists_angular_ui_tree">Nested lists / Angular Ui Tree</a>
+				</ul>
+			</li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Joao Garin 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Admin.io</h1>
+	<h2>Angular js material admin theme</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 11/12/2014</li>
+	<li>latest update: 12/01/2015</li>
+	<li>by: Joao Garin</li>
+	<li><a href="http://themeforest.joaogarin.com/ioadmin">themeforest.joaogarin.com/ioadmin</a></li>
+	<li>email: <a href="mailto:&#106;&#111;&#97;&#111;&#46;&#103;&#97;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#111;&#97;&#111;&#46;&#103;&#97;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for buying the theme</p>
+	</section>
+	
+	<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<h4 id="installation_installing">Installing</h4>
+<p>
+	To deloy the theme simply put the files into your webserver (ex : www.example.com) and navigate to it through the browser</p>
+<h5>
+	Changing and deploying</h5>
+<p>
+	The theme comes with grunt.js integration and bower so in order to have an optimised installation the recommended way is buy performing the grunt and bower tasks described bellow.</p>
+<h5>
+	Development</h5>
+<p>
+	For development purposed javascript files and css files will not be compressed in order to be able to debug and find easily where any issue is.</p>
+<h5>
+	Testing</h5>
+<p>
+	The theme contains a test grunt task using jshint to go trough the code and find possible issues with the code.</p>
+<h5>
+	Production / Minified&nbsp;</h5>
+<p>
+	Minified task compresses css files, js files, compiles html templates in to javascript all in order to fully optimize the final application and make it as fast and reliable as possible.</p>
+<p>
+	&nbsp;</p>
+<h4 id="installation_compiling_the_theme">Compiling the theme</h4>
+<p>
+	To perform the grunt tasks you will need the following things installed in either your local maching (recommended) or on the webserver, depending where you are performing the tasks. For more information on grunt follow this link :&nbsp;<a href="http://gruntjs.com/">http://gruntjs.com/</a></p>
+<p>
+	1 ) Install node.js on your maching. It provides also installations for all other platforms :&nbsp;<a href="http://nodejs.org/download/">http://nodejs.org/download/</a></p>
+<p>
+	On Ubuntu running the sudo apt-get install nodejs might run into problems as the version available in the package manager is not supported. For more info check :&nbsp;<a href="http://stackoverflow.com/questions/12913141/installing-from-npm-fails">http://stackoverflow.com/questions/12913141/installing-from-npm-fails</a></p>
+<p>
+	2 )&nbsp;Before setting up Grunt ensure that your&nbsp;<a href="https://www.npmjs.org/">npm</a>&nbsp;is installed and up-to-date by running npm update -g npm (this might require sudo on certain systems). To install on linux you can run :<strong>&nbsp;sudo apt-get install npm</strong></p>
+<p>
+	2 ) Install grunt Command line interface (CLI) by following :&nbsp;<a href="http://gruntjs.com/getting-started">http://gruntjs.com/getting-started</a></p>
+<p>
+	3 ) make sure all packages are installed by running in your application root folder the following :&nbsp;<strong>sudo&nbsp;npm install</strong></p>
+<p>
+	4 ) Enable all dependencies by running : bower install</p>
+<p>
+	5 ) Run the task you want :</p>
+<ul>
+	<li>
+		grunt dev (grunt --force dev for forcing erros to pass)</li>
+	<li>
+		grunt test&nbsp;(grunt --force test for forcing erros to pass)</li>
+	<li>
+		grunt minified&nbsp;(grunt --force minified for forcing erros to pass)</li>
+	<li>
+		grunt copy-icons (grunt --force minified for forcing erros to pass).&nbsp;</li>
+</ul>
+<p>
+	This will compile &nbsp;the scripts in the application (app, controllers, directives, services, all extra scripts like all the charting libraries etc) and put them into one single js file and one single css file inside the destination folder in this case &quot;<strong>dist</strong>&quot;.</p>
+<p>
+	After that simply push your root files and the dist folder into the webserver and you are done! You have a full compressed and optimized site running.</p>
+<p>
+	Files contained in the compressed application :&nbsp;</p>
+<ul>
+	<li>
+		index.html</li>
+	<li>
+		images</li>
+	<li>
+		fonts</li>
+	<li>
+		dist</li>
+</ul>
+<h5>
+	Problem while copying files</h5>
+<p>
+	When copying the icons you might run into an issue where grunt is trying to open too many files (its a lot of images). You can run the command to Increase file limit size :&nbsp;<strong>ulimit -n 10240.</strong>&nbsp;Alternatively you can also copy the icons folder manually from the folder bower_components/material-design-icons. Make sure to copy all svg files into the same folder&nbsp;<strong>dist/img/icons</strong></p>
+<p>
+	&nbsp;</p>
+<h4 id="installation_packagejson_development_dependencies">package.json - Development dependencies</h4>
+<p>
+	In the file package.json are included the development dependencies, namely all the grunt modules to be able to run grunt to compile the theme. To instal the dependencies run&nbsp;<strong>npm install</strong>&nbsp;and this will install all the dependencies.&nbsp;</p>
+<p>
+	To install a new dependency and save the dependency run the following command :</p>
+<ul>
+	<li>
+		npm install&nbsp;<strong>npm_module</strong>&nbsp;--save-dev</li>
+</ul>
+<p>
+	&nbsp;</p>
+<h4 id="installation_bowerjson_external_dependencies">Bower.json - External dependencies</h4>
+<p>
+	All dependenies are listed in the bower.json file. When running bower install all dependencies like jquery, angular, chartjs etc will be installed in the folder bower_components.</p>
+<p>
+	The following dependencies are included in the bower.json :</p>
+<pre>
+&quot;dependencies&quot;: {
+    &quot;angular&quot;: &quot;~1.3.13&quot;,
+    &quot;angular-animate&quot;: &quot;~1.3.13&quot;,
+    &quot;angular-route&quot;: &quot;~1.3.13&quot;,
+    &quot;underscore&quot;: &quot;~1.8.1&quot;,
+    &quot;angular-wizard&quot;: &quot;~0.4.2&quot;,
+    &quot;angular-ui-tree&quot;: &quot;~2.2.0&quot;,
+    &quot;jquery&quot;: &quot;~2.1.3&quot;,
+    &quot;bootstrap&quot;: &quot;~3.2.0&quot;,
+    &quot;fontawesome&quot;: &quot;~4.3.0&quot;,
+    &quot;jqvmap&quot;: &quot;*&quot;,
+    &quot;weather-icons&quot;: &quot;~1.3.2&quot;,
+    &quot;textAngular&quot;: &quot;~1.3.7&quot;,
+    &quot;angular-sanitize&quot;: &quot;~1.3.13&quot;,
+    &quot;angular-bootstrap&quot;: &quot;~0.12.0&quot;,
+    &quot;chartjs&quot;: &quot;~1.0.1&quot;,
+    &quot;morrisjs&quot;: &quot;~0.5.1&quot;,
+    &quot;flot&quot;: &quot;~0.8.3&quot;,
+    &quot;jquery.sparkline.build&quot;: &quot;~2.1.3&quot;,
+    &quot;easypie&quot;: &quot;~2.1.6&quot;,
+    &quot;slimScroll&quot;: &quot;~1.3.3&quot;,
+    &quot;dripicons&quot;: &quot;~1.0.0&quot;,
+    &quot;angular-material&quot;: &quot;~0.8.3&quot;,
+    &quot;material-design-icons&quot;: &quot;~1.0.1&quot;,
+    &quot;flot.curvedlines&quot;: &quot;~1.1.1&quot;,
+    &quot;angular-messages&quot;: &quot;~1.3.14&quot;
+  }
+
+</pre>
+<p>
+	To include new dependencies run the following command to both install and save the dependency :&nbsp;</p>
+<ul>
+	<li>
+		bower install&nbsp;<strong>package_name&nbsp;</strong>--save</li>
+</ul>
+<p>
+	<strong>Notes :&nbsp;</strong></p>
+<ul>
+	<li>
+		When asked to choose jquery version choose <strong>2.1.4</strong></li>
+	<li>
+		When asked to choose angular version choose <strong>1.3.20</strong></li>
+</ul>
+</section>
+<section id="application_structure">
+	<div class="page-header"><h3>Application Structure</h3><hr class="notop"></div>
+<p>	The application is organized in a way that is easy to fnd and change any script, separating the logic on controllers, directives, services and external libraries as well as scss files.</p>
+<p>	The HTML templates are also separate using angular-route to map between templates for a more performant and clean structure. Next are described all parts of the application and what to find in each of these parts :&nbsp;</p>
+<p>	&nbsp;</p>
+<h3>
+	index.html</h3>
+<p>	<img alt="" src="images/html.png"></p>
+<p>	Contians all &nbsp;the main includes, the overall sctructure of the page. Here is where lies the main imports for javscript and css, font, and HTML dom representation. Templates of specific pages are not present here but imported using <a href="https://docs.angularjs.org/api/ng/directive/ngInclude">ng-include</a></p>
+<h3>
+	Styles&nbsp;</h3>
+<p>	<img alt="" src="images/css.png"></p>
+<p>	In this folder are included the stylesheets for the application. whenever you want to make changes to the style of the application you can make them here. These files are included to be compressed in the Gruntfile.js where they will be minified and compressed and imported into the &quot;<strong>dist</strong>&quot; folder.</p>
+<p>	Stylesheets are organized following the <a href="https://smacss.com/" target="_blank">SMACSS</a>&nbsp;structure to make it easier to find and manage a large CSS structure. CSS files are organizes in the following folders :</p>
+<ul>	<li>		<strong>Partials</strong> - The partials are mixins that are used across the application like @include box-shadow</li>
+	<li>		<strong>Base</strong> - The base CSS files styling general elements like forms, buttons, cards, labels, lists etc</li>
+	<li>		<strong>Settings</strong> - Cotains the settings for the application. Working like a configuration for the application CSS. Contains the colors of the theme in the file colors.scss</li>
+	<li>		<strong>Components</strong> - Application specific components like Charts, maps, team members styling etc</li>
+</ul>
+<h3>
+	Scripts</h3>
+<p>	In this folder are included all external libraries to be used by the theme.This folder <strong>does not contain app specific files but only external libraries.&nbsp;</strong>These files are included because they are either not available via bower or are being used in a very specific version.</p>
+<h3>
+	Images</h3>
+<p>	This is the folder where all images are stored. They are copied to the final dist folder by grunt tasks</p>
+<h3>
+	Fonts</h3>
+<p>	The fonts directory contains fonts for the application. The fonts included in this folder are the weather icons.</p>
+<h3>
+	App</h3>
+<p>	<img alt="" src="images/app.png"></p>
+<p>	The app directory is where the Angular app resides. here are all the templates, directives, controllers,main app file and services. The app directory contains 4 javascript files :&nbsp;</p>
+<ul>	<li>		app.js - The main app javascript file</li>
+	<li>		controllers.js - Where all the controllers are located</li>
+	<li>		directives.js - Where all the directives are located</li>
+	<li>		services.js - Where all the services are located</li>
+</ul>
+<p>	It also contains a &quot;<strong>views</strong>&quot; folder. This folder contains the templates for each view in the app. You can check which view corresponds to each path by &nbsp;looking at the app <strong>.config</strong> method in the app.js file.</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="material_angular_js_directives">
+	<div class="page-header"><h3>Material Angular JS Directives</h3><hr class="notop"></div>
+<p>	Material Design for angular JS comes with a lot of very usefull directives. For a more detailed information check out the project page in&nbsp;<a href="https://material.angularjs.org/#/" target="_blank">https://material.angularjs.org/#/</a></p>
+<p>	Here I will give a little detail about the ones used in the template and how they are combined with the template files.</p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_autocomplete">md-autocomplete</h4>
+<pre>
+&lt;md-autocomplete&gt;&lt;/md-autocomplete&gt;</pre>
+<p>	This is a special input component with a drop-down of all possible matches to a custom query. This component allows you to provide real-time suggestions as the user types in the input area.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-autocomplete md-selected-item=&quot;selectedItem&quot; md-search-text=&quot;searchText&quot; md-items=&quot;item in getMatches(searchText)&quot; md-item-text=&quot;item.display&quot;&gt;
+  &lt;span md-highlight-text=&quot;searchText&quot;&gt;{{item.display}}&lt;/span&gt;
+&lt;/md-autocomplete&gt;</pre>
+<p>	An example of this element is presente in the <strong>Forms</strong> menu and you can find the code inside <strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_button">md-button</h4>
+<pre>
+&lt;md-button&gt;&lt;/md-button&gt;</pre>
+<p>	is a button directive with optional ink ripples (default enabled). If you supply a <strong>href</strong> or <strong>ng-href</strong> attribute, it will become an &lt;a&gt; element. Otherwise, it will become a &lt;button&gt; element.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-button&gt;
+  Button
+&lt;/md-button&gt;
+&lt;md-button href=&quot;http://google.com&quot; class=&quot;md-button-colored&quot;&gt;
+  I&#39;m a link
+&lt;/md-button&gt;
+&lt;md-button ng-disabled=&quot;true&quot; class=&quot;md-colored&quot;&gt;
+  I&#39;m a disabled button
+&lt;/md-button&gt;</pre>
+<p>	Several example of buttons are present in the&nbsp;<strong>Ui elements -&gt; buttons</strong>&nbsp;menu and you can find the code inside&nbsp;<strong>views/ui_elements/buttons.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_card">md-card</h4>
+<pre>
+&lt;md-card&gt;&lt;/md-card&gt;</pre>
+<p>	The md-card directive is a container element used within md-content containers. Cards have constant width and variable heights; where the maximum height is limited to what can fit within a single view on a platform, but it can temporarily expand as needed</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-card&gt;
+ &lt;img src=&quot;dist/images/bg_weather1.png&quot; class=&quot;md-card-image&quot;&gt;
+ &lt;h2&gt;Paracosm&lt;/h2&gt;
+ &lt;p&gt;
+   The titles of Washed Out&#39;s breakthrough song and the first single from Paracosm share the * two most important words in Ernest Greene&#39;s musical language: feel it. It&#39;s a simple request, as well...
+ &lt;/p&gt;
+&lt;/md-card&gt;
+</pre>
+<p>	Several example of cards are present in the&nbsp;<strong>Ui elements -&gt; cards</strong>&nbsp;menu and you can find the code inside&nbsp;<strong>views/ui_elements/cards.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_checkbox">md-checkbox</h4>
+<pre>
+&lt;md-checkbox&gt;&lt;/md-checkbox&gt;</pre>
+<p>	The checkbox directive is used like the normal angular checkbox. As per the <a href="http://www.google.com/design/spec/style/color.html#color-ui-color-application" target="_blank">material design spec</a> the checkbox is in the accent color by default. The primary color palette may be used with the md-primary class.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-checkbox ng-model=&quot;isChecked&quot; aria-label=&quot;Finished?&quot;&gt;
+  Finished ?
+&lt;/md-checkbox&gt;
+&lt;md-checkbox md-no-ink ng-model=&quot;hasInk&quot; aria-label=&quot;No Ink Effects&quot;&gt;
+  No Ink Effects
+&lt;/md-checkbox&gt;
+&lt;md-checkbox ng-disabled=&quot;true&quot; ng-model=&quot;isDisabled&quot; aria-label=&quot;Disabled&quot;&gt;
+  Disabled
+&lt;/md-checkbox&gt;
+</pre>
+<p>	Several example of checkboxes are present in the&nbsp;<strong>Forms elements-&gt;&nbsp;</strong><strong>Forms elements</strong>&nbsp;menu and you can find the code inside&nbsp;<strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_content">md-content</h4>
+<pre>
+&lt;md-content&gt;&lt;/md-content&gt;</pre>
+<p>	The <md-content> directive is a container element useful for scrollable content </md-content></p>
+<p>	<md-content><strong>Restrictions : </strong>Add the md-padding class to make the content padded.</md-content></p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-content class=&quot;md-padding&quot;&gt;
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+&lt;/md-content&gt;
+</pre>
+<p>	Several example of md-content are present all across the site from the main page to each page on Ui elements and Forms. They serve as a wrapper for content.</p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_icon">md-icon</h4>
+<pre>
+&lt;md-icon&gt;&lt;/md-icon&gt;</pre>
+<p>	The md-icon directive is an markup element useful for showing an icon based on a font-face or a SVG. Both external SVGs (via URLs) or cached SVG from icon sets can be easily loaded and used.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-icon md-font-icon=&quot;android&quot; alt=&quot;android &quot;&gt;&lt;/md-icon&gt;
+&lt;md-icon md-svg-icon=&quot;action:android&quot; alt=&quot;android &quot;&gt;&lt;/md-icon&gt;
+&lt;md-icon md-svg-src=&quot;/android.svg&quot; alt=&quot;android &quot;&gt;&lt;/md-icon&gt;
+&lt;md-icon md-svg-src=&quot;{{ getAndroid() }}&quot; alt=&quot;android &quot;&gt;&lt;/md-icon&gt;
+</pre>
+<p>	You can find examples of md-icon being used as well as docmentation from icon names in the menu item <strong>Ui elements -&gt; Icons</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_input">md-input</h4>
+<pre>
+&lt;md-input&gt;&lt;/md-input&gt;</pre>
+<p>	Use the input or the textarea as a child of an md-input-container.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-input-container&gt;
+  &lt;label&gt;Color&lt;/label&gt;
+  &lt;input type=&quot;text&quot; ng-model=&quot;color&quot; required md-maxlength=&quot;10&quot;&gt;
+&lt;/md-input-container&gt;
+</pre>
+<p>	You can find examples of md-input being used and also being used with error (using ngMessages module) in the menu item&nbsp;<strong>Form elements -&gt; Form elements&nbsp;</strong>and you can find the code inside <strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_progress_circular">md-progress-circular</h4>
+<pre>
+&lt;md-progress-circular&gt;&lt;/md-progress-circular&gt;</pre>
+<p>	The circular progress directive is used to make loading content in your app as delightful and painless as possible by minimizing the amount of visual change a user sees before they can view and interact with content.</p>
+<p>	For operations where the percentage of the operation completed can be determined, use a determinate indicator. They give users a quick sense of how long an operation will take.</p>
+<p>	For operations where the user is asked to wait a moment while something finishes up, and it&rsquo;s not necessary to expose what&#39;s happening behind the scenes and how long it will take, use an indeterminate indicator.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-progress-circular md-mode=&quot;determinate&quot; value=&quot;...&quot;&gt;&lt;/md-progress-circular&gt;
+&lt;md-progress-circular md-mode=&quot;determinate&quot; ng-value=&quot;...&quot;&gt;&lt;/md-progress-circular&gt;
+&lt;md-progress-circular md-mode=&quot;determinate&quot; value=&quot;...&quot; md-diameter=&quot;100&quot;&gt;&lt;/md-progress-circular&gt;
+&lt;md-progress-circular md-mode=&quot;indeterminate&quot;&gt;&lt;/md-progress-circular&gt;
+</pre>
+<p>	You can find examples of md-progress-circular being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/ui_elements/material.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_progress_linear">md-progress-linear</h4>
+<pre>
+&lt;md-progress-linear&gt;&lt;/md-progress-linear&gt;</pre>
+<p>	The linear progress directive is used to make loading content in your app as delightful and painless as possible by minimizing the amount of visual change a user sees before they can view and interact with content.</p>
+<p>	Each operation should only be represented by one activity indicator&mdash;for example, one refresh operation should not display both a refresh bar and an activity circle.</p>
+<p>	For operations where the percentage of the operation completed can be determined, use a determinate indicator. They give users a quick sense of how long an operation will take.</p>
+<p>	For operations where the user is asked to wait a moment while something finishes up, and it&rsquo;s not necessary to expose what&#39;s happening behind the scenes and how long it will take, use an indeterminate indicator.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-progress-linear md-mode=&quot;determinate&quot; value=&quot;...&quot;&gt;&lt;/md-progress-linear&gt;
+&lt;md-progress-linear md-mode=&quot;determinate&quot; ng-value=&quot;...&quot;&gt;&lt;/md-progress-linear&gt;
+&lt;md-progress-linear md-mode=&quot;indeterminate&quot;&gt;&lt;/md-progress-linear&gt;
+&lt;md-progress-linear md-mode=&quot;buffer&quot; value=&quot;...&quot; md-buffer-value=&quot;...&quot;&gt;&lt;/md-progress-linear&gt;
+&lt;md-progress-linear md-mode=&quot;query&quot;&gt;&lt;/md-progress-linear&gt;
+</pre>
+<p>	You can find examples of md-progress-linear being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/</strong><strong>ui_elements</strong><strong>/material.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_radio_button">md-radio-button</h4>
+<pre>
+&lt;md-radio-button&gt;&lt;/md-radio-button&gt;</pre>
+<p>	The md-radio-button directive is the child directive required to be used within <md-radio-group> elements. While similar to the input type=&quot;radio&quot; ng-model=&quot;&quot; value=&quot;&quot; directive, the md-radio-button directive provides ink effects, ARIA support, and supports use within named radio groups.</md-radio-group></p>
+<pre>
+&lt;md-radio-button value=&quot;1&quot; aria-label=&quot;Label 1&quot;&gt;
+  Label 1
+&lt;/md-radio-button&gt;
+&lt;md-radio-button ng-model=&quot;color&quot; ng-value=&quot;specialValue&quot; aria-label=&quot;Green&quot;&gt;
+  Green
+&lt;/md-radio-button&gt;
+</pre>
+<p>	You can find examples of md-radio-button being used in the menu item &nbsp;<strong>Form elements -&gt; Form elements&nbsp;</strong>and you can find the code inside&nbsp;<strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_select">md-select</h4>
+<pre>
+&lt;md-select&gt;&lt;/md-select&gt;</pre>
+<p>	Displays a select box, bound to an ng-model.</p>
+<pre>
+&lt;md-select ng-model=&quot;someModel&quot; placeholder=&quot;Select a state&quot;&gt;
+  &lt;md-option ng-value=&quot;opt&quot; ng-repeat=&quot;opt in neighborhoods2&quot;&gt;{{ opt }}&lt;/md-option&gt;
+&lt;/md-select&gt;
+</pre>
+<p>	You can find examples of md-select being used in the menu item &nbsp;<strong>Form elements -&gt; Form elements&nbsp;</strong>and you can find the code inside&nbsp;<strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_sidenav">md-sidenav</h4>
+<pre>
+&lt;md-sidenav&gt;&lt;/md-sidenav&gt;</pre>
+<p>	A Sidenav component that can be opened and closed programatically. By default, upon opening it will slide out on top of the main content area.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;div layout=&quot;row&quot; ng-controller=&quot;MyController&quot;&gt;
+  &lt;md-sidenav md-component-id=&quot;left&quot; class=&quot;md-sidenav-left&quot;&gt;
+    Left Nav!
+  &lt;/md-sidenav&gt;
+  &lt;md-content&gt;
+    Center Content
+    &lt;md-button ng-click=&quot;openLeftMenu()&quot;&gt;
+      Open Left Menu
+    &lt;/md-button&gt;
+  &lt;/md-content&gt;
+  &lt;md-sidenav md-component-id=&quot;right&quot; md-is-locked-open=&quot;$mdMedia(&#39;min-width: 333px&#39;)&quot; class=&quot;md-sidenav-right&quot;&gt;
+    Right Nav!
+  &lt;/md-sidenav&gt;
+&lt;/div&gt;
+var app = angular.module(&#39;myApp&#39;, [&#39;ngMaterial&#39;]);
+app.controller(&#39;MyController&#39;, function($scope, $mdSidenav) {
+  $scope.openLeftMenu = function() {
+    $mdSidenav(&#39;left&#39;).toggle();
+  };
+});
+</pre>
+<p>	You can find examples of md-sidenav being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/</strong><strong>ui_elements</strong><strong>/material.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_slider">md-slider</h4>
+<pre>
+&lt;md-slider&gt;&lt;/md-slider&gt;</pre>
+<p>	The <md-slider> component allows the user to choose from a range of values. As per the material design spec the slider is in the accent color by default. </md-slider></p>
+<p>	<md-slider>The primary color palette may be used with the md-primary class. It has two modes: &#39;normal&#39; mode, where the user slides between a wide range of values, and &#39;discrete&#39; mode, where the user slides between only a few select values. </md-slider></p>
+<p>	<md-slider>To enable discrete mode, add the md-discrete attribute to a slider, and use the step attribute to change the distance between values the user is allowed to pick.</md-slider></p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-slider ng-model=&quot;myValue&quot; min=&quot;5&quot; max=&quot;500&quot;&gt;
+&lt;/md-slider&gt;
+</pre>
+<p>	You can find examples of md-slider being used in the menu item &nbsp;<strong>Form elements -&gt; Form elements&nbsp;</strong>and you can find the code inside&nbsp;<strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_switch">md-switch</h4>
+<pre>
+&lt;md-switch&gt;&lt;/md-switch&gt;</pre>
+<p>	The switch is a style of checkbox usefull to simulate the mobile switch elements.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-switch ng-model=&quot;isActive&quot; aria-label=&quot;Finished?&quot;&gt;
+  Finished ?
+&lt;/md-switch&gt;
+&lt;md-switch md-no-ink ng-model=&quot;hasInk&quot; aria-label=&quot;No Ink Effects&quot;&gt;
+  No Ink Effects
+&lt;/md-switch&gt;
+&lt;md-switch ng-disabled=&quot;true&quot; ng-model=&quot;isDisabled&quot; aria-label=&quot;Disabled&quot;&gt;
+  Disabled
+&lt;/md-switch&gt;
+</pre>
+<p>	You can find examples of md-switch being used in the menu item &nbsp;<strong>Form elements -&gt; Form elements&nbsp;</strong>and you can find the code inside&nbsp;<strong>views/forms/elements.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_tab">md-tab</h4>
+<pre>
+&lt;md-tab&gt;&lt;/md-tab&gt;</pre>
+<p>	Use the <strong>md-tab</strong> a nested directive used within <strong>md-tabs</strong> to specify a tab with a label and optional view content. If the label attribute is not specified, then an optional <strong>md-tab-label</strong> tag can be used to specify more complex tab header markup.</p>
+<p>	If neither the label nor the md-tab-label are specified, then the nested markup of the md-tab is used as the tab header markup. If a tab label has been identified, then any non-md-tab-label markup will be considered tab content and will be transcluded to the internal <strong>div class=&quot;md-tabs-content&quot;</strong> container.</p>
+<p>	This container is used by the TabsController to show/hide the active tab&#39;s content view. This synchronization is automatically managed by the internal TabsController whenever the tab selection changes.</p>
+<p>	Selection changes can be initiated via data binding changes, programmatic invocation, or user gestures.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-tab label disabled md-on-select md-on-deselect&gt;
+  &lt;h3&gt;My Tab content&lt;/h3&gt;
+&lt;/md-tab&gt;
+&lt;md-tab&gt;
+  &lt;md-tab-label&gt;
+    &lt;h3&gt;My Tab content&lt;/h3&gt;
+  &lt;/md-tab-label&gt;
+  &lt;p&gt;
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+  &lt;/p&gt;
+&lt;/md-tab&gt;
+</pre>
+<p>	You can find examples of md-tab being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/ui_elements/material.html</strong></p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_toolbar">md-toolbar</h4>
+<pre>
+&lt;md-toolbar&gt;&lt;/md-toolbar&gt;</pre>
+<p>	md-toolbar is used to place a toolbar in your app. Toolbars are usually used above a content area to display the title of the current page, and show relevant action buttons for that page. You can change the height of the toolbar by adding either the <strong>md-medium-tall </strong>or <strong>md-tall</strong> class to the toolbar.</p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;div layout=&quot;column&quot; layout-fill&gt;
+  &lt;md-toolbar&gt;
+    &lt;div class=&quot;md-toolbar-tools&quot;&gt;
+      &lt;span&gt;My App&#39;s Title&lt;/span&gt;
+      &lt;!-- fill up the space between left and right area --&gt;
+      &lt;span flex&gt;&lt;/span&gt;
+      &lt;md-button&gt;
+        Right Bar Button
+      &lt;/md-button&gt;
+    &lt;/div&gt;
+  &lt;/md-toolbar&gt;
+  &lt;md-content&gt;
+    Hello!
+  &lt;/md-content&gt;
+&lt;/div&gt;
+</pre>
+<p>	You can find examples of md-toolbar being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/ui_elements/material.html</strong></p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+<h4 id="material_angular_js_directives_md_tooltip">md-tooltip</h4>
+<pre>
+&lt;md-tooltip&gt;&lt;/md-tooltip&gt;</pre>
+<p>	Tooltips are used to describe elements that are interactive and primarily graphical (not textual). Place a <md-tooltip> as a child of the element it describes. A tooltip will activate when the user focuses, hovers over, or touches the parent.</md-tooltip></p>
+<p>	<strong>Usage :&nbsp;</strong></p>
+<pre>
+&lt;md-icon icon=&quot;/img/icons/ic_play_arrow_24px.svg&quot;&gt;
+  &lt;md-tooltip&gt;
+    Play Music
+  &lt;/md-tooltip&gt;
+&lt;/md-icon&gt;
+</pre>
+<p>	You can find examples of md-tooltip being used in the menu item&nbsp;<strong>Ui Elements -&gt; Material Ui</strong>and you can find the code inside&nbsp;<strong>views/ui_elements/material.html</strong></p>
+</section>
+<section id="charts">
+	<div class="page-header"><h3>Charts</h3><hr class="notop"></div>
+<p>	The application includes different libraries to handle the charting and graphs. here will be explained each one and how they are built, how they can be changed or adapted.</p>
+<p>	&nbsp;</p>
+<h4 id="charts_morris_charts">Morris charts</h4>
+<p>	Morris charts (<a href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>) is an excelent library for dynamic interactive charts. It contains different charts like :&nbsp;</p>
+<ul>	<li>		Line charts</li>
+	<li>		Area charts</li>
+	<li>		bar charts</li>
+	<li>		Stacked bar charts</li>
+	<li>		Doughnut bar charts</li>
+</ul>
+<p>	A special directive and controller was created for morris charts, it makes it very simple to include a chart in a view, provide the data from the controller and make it &nbsp;rendered using a custom directive. The following sample displays a line morris chart :</p>
+<pre>
+ &lt;div morris-chart data-data=&quot;simpleData&quot; data-type=&quot;line&quot; data-xkey=&quot;year&quot; data-ykeys=&#39;[&quot;value&quot;]&#39; data labels=&#39;[&quot;Value&quot;]&#39; data-line-colors=&#39;[&quot;#2693E9&quot;]&#39; data-line-width=&quot;3&quot;&gt;&lt;/div&gt;</pre>
+<p>	There are like mentioned different types of charts specified here in the <strong>data-type </strong>attribute :&nbsp;</p>
+<ul>	<li>		line</li>
+	<li>		area</li>
+	<li>		bar</li>
+	<li>		donut</li>
+</ul>
+<p>	You can find information on the morris charts data in the controller&nbsp;<strong>morrisChartCtrl</strong></p>
+<p>	&nbsp;</p>
+<h4 id="charts_chart_js">Chart js</h4>
+<p>	Chartjs (<a href="http://www.chartjs.org/">http://www.chartjs.org/</a>) is a simple yet effective charting library, easy to use and &nbsp;get started it provides different types of charts based on canvas. It does not provide interaction with the charts but provides a simple and clean way of representing easy data in several types of charts</p>
+<ul>	<li>		Line</li>
+	<li>		Bar</li>
+	<li>		Radar</li>
+	<li>		Polar</li>
+	<li>		Pie</li>
+	<li>		Donut</li>
+</ul>
+<p>	A special directive and controller was created for chartjs, it makes it very simple to include a chart in a view, provide the data from the controller and make it &nbsp;rendered using a custom directive. The following sample displays a line <strong>chartjs</strong> chart :&nbsp;</p>
+<pre>
+&lt;chart class=&quot;chartjs&quot; data-data=&quot;chartjsBar&quot; data-type=&quot;Bar&quot; value=&quot;myChart&quot;&gt;&lt;/chart&gt;</pre>
+<p>	In the example data is comming from the controller <strong>chartjsCtrl</strong> in the scope variable <strong>chartjsBar</strong></p>
+<p>	&nbsp;</p>
+<h4 id="charts_flot_charts">Flot charts</h4>
+<p>	Flotcharts (<a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>) is a very complete charting library. it provides simple interactions with the chartings, and very different options and customizations to the charts. There are different types of flotcharts :&nbsp;</p>
+<ul>	<li>		Line</li>
+	<li>		Realtime</li>
+	<li>		Line and area</li>
+	<li>		Stacked bar</li>
+	<li>		Pie&nbsp;</li>
+	<li>		Doughnut</li>
+</ul>
+<p>	In the theme a directive and a controller was created for the flotcharts. The following example represents a chart where data is comming from &nbsp;the flotchart controller and displayed in the flotchart custom directive :&nbsp;</p>
+<pre>
+ &lt;div data-flot-chart data-data=&quot;line1.data&quot; data-options=&quot;line1.options&quot; style=&quot;width: 100%; height: 300px;&quot;&gt;&lt;/div&gt;</pre>
+<p>	In the example data is comming from the controller&nbsp;<strong>flotChartCtrl</strong>&nbsp;in the scope variable<strong>&nbsp;<span style="line-height: 19px;">line1.data</span></strong></p>
+<p>	&nbsp;</p>
+<h4 id="charts_easypiecharts">Easypiecharts</h4>
+<p>	Easypiecharts (<a href="https://github.com/rendro/easy-pie-chart/">https://github.com/rendro/easy-pie-chart/</a>) provides a way &quot;to draw simple, animated pie charts for single values&quot;. It is a simple representation of simple data in a very attractive way and easy to build.</p>
+<p>	In the theme there is a custom directive and a controller to build easypiecharts like in the following example :</p>
+<pre>
+&lt;div easypiechart options=&quot;easypie1.options&quot; percent=&quot;easypie1.percent&quot; class=&quot;easypiechart&quot;&gt;
+      &lt;span class=&quot;pie-percent&quot; ng-bind=&quot;easypie1.percent&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;</pre>
+<div>
+	In the example data is comming from the controller&nbsp;<strong>chartingCtrl</strong>&nbsp;in the scope variable<strong>&nbsp;<span style="line-height: 19px;">easypie1.&nbsp;</span></strong><span style="line-height: 19px;">It also contains a number in the middle wich will be the value represented in the center of the chart.</span></div>
+<div>
+	&nbsp;</div>
+<h4 id="charts_gauge_charts">Gauge charts</h4>
+<div>
+	Gauge charts are a type of chart that can represent a percentage as a means of how much is reached. In the theme a custom directive and a controller are included to represent gauge charts.</div>
+<div>
+	&nbsp;</div>
+<div>
+	In the next example we can see how to build a gauge chart with the custom directive :&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre>
+&lt;canvas data-gauge-chart data-gauge-data=&quot;gauge1.gaugeData&quot; data-gauge-options=&quot;gauge1.gaugeOptions&quot; style=&quot;width: 220px; height: 110px; &quot;&gt;&lt;/canvas&gt;</pre>
+</div>
+<div>
+	In the example data is comming from the controller&nbsp;<strong>gaugeCtrl</strong>&nbsp;in the scope variable<strong>&nbsp;<span style="line-height: 19px;">gauge1.</span></strong></div>
+<div>
+	&nbsp;</div>
+<h4 id="charts_sparkline">Sparkline</h4>
+<div>
+	Sparkline is a library for making small inline charts with data provided in the HTML element or via javascript. It has different types of charts and represents them a small sized elements that can be usefull to several widgets.</div>
+<div>
+	&nbsp;</div>
+<div>
+	The following example shows how to build a sparkline chart :&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre>
+&lt;span data-sparkline data-spark-data=&quot;simpleChart1.sparkData&quot; data-spark-options=&quot;simpleChart1.sparkOptions&quot;&gt;&lt;/span&gt;</pre>
+	<div>
+		In the example data is comming from the controller&nbsp;<strong>sparklineCtrl</strong>&nbsp;in the scope variable<strong>&nbsp;<span style="line-height: 19px;">simpleChart1.</span></strong></div>
+</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="css_files">
+	<div class="page-header"><h3>CSS Files</h3><hr class="notop"></div>
+<p>	<img alt="" src="images/css.png"></p>
+<p>	In the theme there are several SCSS files inside the &quot;styles&quot; folder. These files are organized as mention in the first chapter in the following folders :</p>
+<ul>	<li>		<strong>Partials</strong>&nbsp;- The partials are mixins that are used across the application like @include box-shadow</li>
+	<li>		<strong>Base</strong>&nbsp;- The base CSS files styling general elements like forms, buttons, cards, labels, lists etc</li>
+	<li>		<strong>Settings</strong>&nbsp;- Cotains the settings for the application. Working like a configuration for the application CSS. Contains the colors of the theme in the file colors.scss</li>
+	<li>		<strong>Components</strong>&nbsp;- Application specific components like Charts, maps, team members styling etc</li>
+</ul>
+<p>	All these files are compiled into the styles.scss file inside the styles folder and copied with grunt into the dist folder (minimized application).</p>
+<p>	If you would like to edit a specific section of the site, simply find the appropriate CSS file as explained in the file styes.scss and then scroll down until you find the appropriate style that needs to be edited. For example for changing the default button style :&nbsp;</p>
+<pre>
+/* Contains all buttons styling, including Angular Material design buttons md-button */
+@import &quot;base/buttons&quot;;
+...</pre>
+<div>
+	The theme uses bootstrap as well as Material design specific CSS for angularJs.</div>
+<div>
+	&nbsp;</div>
+<div>
+	For more information on bootstrap see <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a>&nbsp;and&nbsp;<a href="https://material.angularjs.org/#/" target="_blank">https://material.angularjs.org/#/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="icons">
+	<div class="page-header"><h3>Icons</h3><hr class="notop"></div>
+<p>	The theme includes different libraries for displaying icons. You can find these libraries inside &nbsp;the &quot;fonts&quot; folder in the themes root folder.</p>
+<p>	Material design icon set</p>
+<p>	Material design icons included with the Material design framework by google. Find more in&nbsp;<a href="https://github.com/google/material-design-icons" target="_blank">https://github.com/google/material-design-icons</a></p>
+<h4 id="icons_glyphicons">Glyphicons</h4>
+<p>	The theme includes the glyphicons from bootstrap css for Icon. You can include icons anywhere on the template choosing from the different icons of bootstrap.</p>
+<pre>
+&lt;span class=&quot;glyphicon glyphicon-asterisk&quot;&gt;&lt;/span&gt;</pre>
+<p>	You can find all the icons in&nbsp;<a href="http://getbootstrap.com/components/">http://getbootstrap.com/components/</a></p>
+<p>	&nbsp;</p>
+<h4 id="icons_weather_icons">Weather icons</h4>
+<p>	For displaying weather icons the API from&nbsp;<a href="http://erikflowers.github.io/weather-icons/">http://erikflowers.github.io/weather-icons/</a>&nbsp;is used. It is a simple easy to use icon font generator that simillar to font awesome displays icons based on a &lt;i&gt; tag.</p>
+<pre>
+&lt;i class=&quot;wi-day-cloudy-gusts&quot;&gt;&lt;/i&gt;</pre>
+<p>	You can find all the icons in&nbsp;<a href="http://erikflowers.github.io/weather-icons/">http://erikflowers.github.io/weather-icons/</a></p>
+<p>	&nbsp;</p>
+<h4 id="icons_font_awesome">Font awesome</h4>
+<p>	The theme includes the fontawesome library for Icon generation. You can include icons anywhere on the template choosing from the great API that is fontawesome. &nbsp;</p>
+<p>	To include an icon on a page simply add the following class elements to a i tag code (eg: facebook icon) &nbsp; : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<pre>
+&lt;i class=&quot;fa fa-facebook fa-2x&quot;&gt;&lt;/i&gt; </pre>
+<p>	For more information on the API see <a href="http://fortawesome.github.io/Font-Awesome/">http://fortawesome.github.io/Font-Awesome/</a></p>
+</section>
+<section id="additional_angular_scripts">
+	<div class="page-header"><h3>Additional Angular scripts</h3><hr class="notop"></div>
+<h4 id="additional_angular_scripts_angular_bootstrap_ui">Angular Bootstrap UI</h4>
+<p>	The theme includes the angular bootstrap ui script. This script provides a lot of functionalities through custom directives and controllers that make it incredibely easy to make use of a lot of elements like :&nbsp;</p>
+<ul>	<li>		Accordions</li>
+	<li>		Alerts</li>
+	<li>		Buttons</li>
+	<li>		Carousel</li>
+	<li>		Collapse</li>
+	<li>		Datepickers</li>
+	<li>		Dropdowns</li>
+	<li>		Modals</li>
+	<li>		Paginations</li>
+	<li>		Popovers</li>
+	<li>		Progress bars</li>
+	<li>		Ratings</li>
+	<li>		Tabs</li>
+	<li>		Timepickers</li>
+	<li>		Tooltips</li>
+	<li>		Typehead</li>
+</ul>
+<p>	All &nbsp;this and full documentation for how to use them can be found in&nbsp;<a href="http://angular-ui.github.io/bootstrap/">http://angular-ui.github.io/bootstrap/</a></p>
+<p>	&nbsp;</p>
+<h4 id="additional_angular_scripts_app_todo">App todo</h4>
+<p>	A todo list is something simple, yet very usefull. The admin theme includes a todo list that is saved on the browser cookies. This makes for a simple solution that can handle your everyday todo&#39;s in a easy and fast way. It is integrated with toastr for notifications via the service.js file in the app directory.</p>
+<p>	This todo list is brought throug the script available in&nbsp;<a href="https://github.com/1JS/App-todo">https://github.com/1JS/App-todo</a></p>
+<p>	You can find the todo in the views folder of the app under <strong>&quot;tasks&quot; -&gt; tasks.html.&nbsp;</strong>The controller associated with this is the&nbsp;<strong>taskCtrl&nbsp;</strong>pesent in the file controllers.js</p>
+<p>	&nbsp;</p>
+<h4 id="additional_angular_scripts_nested_lists_angular_ui_tree">Nested lists / Angular Ui Tree</h4>
+<p>	The nested lists is a code sample from&nbsp;<a href="https://github.com/JimLiu/angular-ui-tree">https://github.com/JimLiu/angular-ui-tree</a></p>
+<p>	It provides a easy way to organize lists inside of eachother, and attaching events to the js code you can actually perform tasks when a list is put inside another.</p>
+<p>	Here is sample of the HTML in the file <strong>nested-lists.html </strong>where a controller&nbsp;<strong>TreeDemoCtrl</strong>&nbsp;is providing the data and populating the tree that is using a template file (also present in this file) to render the HTML.</p>
+<pre>
+&lt;div class=&quot;page&quot; data-ng-controller=&quot;TreeDemoCtrl&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-12&quot;&gt;
+            &lt;section class=&quot;panel panel-default&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;&lt;strong&gt;&lt;i class=&quot;fa fa-list panel-ico&quot;&gt;&lt;/i&gt;Nested Lists&lt;/strong&gt;&lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    &lt;div ui-tree=&quot;options&quot;&gt;
+                        &lt;ol ui-tree-nodes ng-model=&quot;list&quot; &gt;
+                            &lt;li ng-repeat=&quot;item in list&quot; ui-tree-node ng-include=&quot;&#39;items_renderer.html&#39;&quot;&gt;&lt;/li&gt;
+                        &lt;/ol&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt; 
+        &lt;/div&gt;
+    &lt;/div&gt;
+...</pre>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<p>	The following scripts and frameworks where used in the development of this theme :&nbsp;</p>
+<ul>	<li>		Material design AngularJs -&nbsp;https://material.angularjs.org/</li>
+	<li>		AngularJs -&nbsp;https://angularjs.org/</li>
+	<li>		UnderscoreJs -&nbsp;http://underscorejs.org/</li>
+	<li>		JQuery -&nbsp;http://jquery.com/</li>
+	<li>		Bootstrap -&nbsp;http://getbootstrap.com/</li>
+	<li>		Fontawesome -&nbsp;http://fortawesome.github.io/Font-Awesome/</li>
+	<li>		Jqvmap -&nbsp;http://jqvmap.com/</li>
+	<li>		Angular bootstrap -&nbsp;https://github.com/angular-ui/bootstrap</li>
+	<li>		ChartJs -&nbsp;http://www.chartjs.org/</li>
+	<li>		Morris charts -&nbsp;http://morrisjs.github.io/morris.js/</li>
+	<li>		Flot chart -&nbsp;http://www.flotcharts.org/</li>
+	<li>		Jquery Sparklines -&nbsp;http://omnipotent.net/jquery.sparkline/#s-about</li>
+	<li>		Easypie -&nbsp;http://rendro.github.io/easy-pie-chart/</li>
+</ul>
+<p>	&nbsp;</p>
+<p>	The following sites where used to get images for the demo of the theme</p>
+<ul>	<li>		Unsplash -&nbsp;https://unsplash.com/</li>
+	<li>		Stock.im -&nbsp;http://thestocks.im/</li>
+</ul>
+<p>	&nbsp;</p>
+</section>
+
+	</div>
+</body>
+</html>
