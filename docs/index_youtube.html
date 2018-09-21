@@ -20,11 +20,13 @@
 		<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">	
  	    <!--Flex slider-->
-        <link rel="stylesheet" href="assets/css/flexslider.css">	
+        <link rel="stylesheet" href="assets/css/flexslider.css">
+		<!--ytp player-->
+		<link rel="stylesheet" href="assets/css/YTPlayer.css">		
 		<!-- component CSS -->	
 		<link rel="stylesheet" href="assets/css/aos.css">			
 		<!-- Style CSS -->
-		<link rel="stylesheet" href="assets/css/style.css">	
+		<link rel="stylesheet" href="assets/css/style.css">		
 		<!-- CSS FOR COLOR SWITCHER -->
 		<link rel="stylesheet" href="assets/css/switcher/switcher.css"> 	
 		<link rel="stylesheet" href="assets/css/switcher/style1.css" id="colors">			
@@ -66,11 +68,12 @@
 				</ul>
 			  </div>
 			</div>
-		  </nav>      
+		  </nav>     
 		<!-- END NAVBAR -->
 
 		<!-- START HOME -->
-		<section id="home" class="home_parallax" style="background-image: url(assets/img/bg/static-bg.jpg);  background-size:cover; background-position: center center;">			
+		<section id="home" class="home_parallax" style="background-image: url(assets/img/bg/youtube-bg.jpg);  background-size:cover; background-position: center center;">			
+			<a class="player" data-property="{videoURL:'https://youtu.be/f7MskKkn2Jg',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
 			<div class="container">
 				<div class="row">
 				  <div class="col-md-12 text-center">
@@ -855,24 +858,25 @@
 			  </ul>
 			</div>
 		 </div>  
-		 <!-- END OF STYLE SWITCHER -->	
+		 <!-- END OF STYLE SWITCHER -->
 		 
 		<!-- Latest jQuery -->
 			<script src="assets/js/jquery-1.12.4.min.js"></script>
 		<!-- Latest compiled and minified Bootstrap -->
 			<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<!-- modernizer JS -->		
-			<script src="assets/js/modernizr-2.8.3.min.js"></script>	
-		<!-- jquery nav JS -->		
-			<script src="assets/js/jquery.nav.js"></script>
-		<!-- jquery smooth-scroll JS -->
-			<script src="assets/js/smooth-scroll.js"></script>																	
+			<script src="assets/js/modernizr-2.8.3.min.js"></script>																	
 		<!-- owl-carousel min js  -->
 			<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
 		<!-- stellar js -->
 			<script src="assets/js/jquery.stellar.min.js"></script>
 		<!-- countTo js -->
-			<script src="assets/js/jquery.inview.min.js"></script>	
+			<script src="assets/js/jquery.inview.min.js"></script>
+		<!-- video scripts -->
+			<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>	
+			<script type="text/javascript">
+				$('.player').mb_YTPlayer();
+			</script>					
 		<!-- jquery flexslider min js -->
 			<script src="assets/js/jquery.flexslider-min.js"></script>				
 		<!-- scrolltopcontrol js -->
@@ -882,7 +886,7 @@
 		<!-- aos js -->
 			<script src="assets/js/aos.js"></script>
 		<!-- switcher js -->
-			<script src="assets/js/switcher.js"></script>			
+			<script src="assets/js/switcher.js"></script>					
 		<!-- map js -->
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwIQh7LGryQdDDi-A603lR8NqiF3R_ycA"></script>				
 		<!-- scripts js -->

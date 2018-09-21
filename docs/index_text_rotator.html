@@ -20,7 +20,9 @@
 		<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">	
  	    <!--Flex slider-->
-        <link rel="stylesheet" href="assets/css/flexslider.css">	
+        <link rel="stylesheet" href="assets/css/flexslider.css">
+		<!-- Simpletextrotator css -->
+        <link rel="stylesheet" href="assets/simple-text-rotator/css/simpletextrotator.css">			
 		<!-- component CSS -->	
 		<link rel="stylesheet" href="assets/css/aos.css">			
 		<!-- Style CSS -->
@@ -70,12 +72,12 @@
 		<!-- END NAVBAR -->
 
 		<!-- START HOME -->
-		<section id="home" class="home_parallax" style="background-image: url(assets/img/bg/static-bg.jpg);  background-size:cover; background-position: center center;">			
+		<section id="home" class="home_parallax" style="background-image: url(assets/img/bg/rotator-bg.jpg);  background-size:cover; background-position: center center;">			
 			<div class="container">
 				<div class="row">
 				  <div class="col-md-12 text-center">
 					<div class="hero-text">
-						<h1>We make awesome tours</h1>
+						<h1><span class="rotate">We make awesome tours | Find your tour today | Welcome to fz</span></h1>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />Lorem Ipsum has been the industry's standard .</p>
 						<a href="#special_package" class="btn btn-default btn-home-bg">Find tour</a>						
 					</div>
@@ -855,8 +857,8 @@
 			  </ul>
 			</div>
 		 </div>  
-		 <!-- END OF STYLE SWITCHER -->	
-		 
+		 <!-- END OF STYLE SWITCHER -->
+							
 		<!-- Latest jQuery -->
 			<script src="assets/js/jquery-1.12.4.min.js"></script>
 		<!-- Latest compiled and minified Bootstrap -->
@@ -874,7 +876,9 @@
 		<!-- countTo js -->
 			<script src="assets/js/jquery.inview.min.js"></script>	
 		<!-- jquery flexslider min js -->
-			<script src="assets/js/jquery.flexslider-min.js"></script>				
+			<script src="assets/js/jquery.flexslider-min.js"></script>	
+		<!-- simple-text-rotator.min.js  -->
+		<script src="assets/simple-text-rotator/js/jquery.simple-text-rotator.min.js"></script>					
 		<!-- scrolltopcontrol js -->
 			<script src="assets/js/scrolltopcontrol.js"></script>									
 		<!-- form-contact js -->
@@ -882,10 +886,21 @@
 		<!-- aos js -->
 			<script src="assets/js/aos.js"></script>
 		<!-- switcher js -->
-			<script src="assets/js/switcher.js"></script>			
+			<script src="assets/js/switcher.js"></script>					
 		<!-- map js -->
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwIQh7LGryQdDDi-A603lR8NqiF3R_ycA"></script>				
 		<!-- scripts js -->
 			<script src="assets/js/scripts.js"></script>
+			<script type="text/javascript">			
+			 /*  Textrotator */
+			if ($('.rotate').length > 0) {
+				$(".rotate").textrotator({
+					animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+					separator: "|", //  You can define a new separator (|, &, * etc.) by yourself using this field.
+					speed: 3000 // How many milliseconds until the next word show.
+				});
+			}
+			/* End Textrotator */
+			</script>				
     </body>
 </html>
